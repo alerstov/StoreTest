@@ -15,6 +15,12 @@
 		CE20B75215C3E6D900541961 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CE20B75115C3E6D900541961 /* AppDelegate.m */; };
 		CE20B75515C3E6D900541961 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE20B75415C3E6D900541961 /* ViewController.m */; };
 		CE20B75815C3E6D900541961 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE20B75615C3E6D900541961 /* ViewController.xib */; };
+		CE20B76315C5475E00541961 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE20B76215C5475E00541961 /* StoreKit.framework */; };
+		CE20B76615C547A500541961 /* StoreManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CE20B76515C547A400541961 /* StoreManager.m */; };
+		CE20B77115C5A3F400541961 /* pids.plist in Resources */ = {isa = PBXBuildFile; fileRef = CE20B77015C5A3F400541961 /* pids.plist */; };
+		CE20B78015C5C34E00541961 /* StoreKitManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CE20B77F15C5C34D00541961 /* StoreKitManager.m */; };
+		CEA592D015C66FC7009CD9C0 /* StoreData.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA592CF15C66FC7009CD9C0 /* StoreData.m */; };
+		CEA5932215C6BD01009CD9C0 /* FakeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA5932115C6BD01009CD9C0 /* FakeManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,15 +28,25 @@
 		CE20B74115C3E6D900541961 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		CE20B74315C3E6D900541961 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		CE20B74515C3E6D900541961 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		CE20B74915C3E6D900541961 /* StoreTest-Info.plist */ = {isa = PBXFileReference; path = "StoreTest-Info.plist"; sourceTree = "<group>"; };
+		CE20B74915C3E6D900541961 /* StoreTest-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "StoreTest-Info.plist"; sourceTree = "<group>"; };
 		CE20B74B15C3E6D900541961 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		CE20B74D15C3E6D900541961 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		CE20B74F15C3E6D900541961 /* StoreTest-Prefix.pch */ = {isa = PBXFileReference; path = "StoreTest-Prefix.pch"; sourceTree = "<group>"; };
-		CE20B75015C3E6D900541961 /* AppDelegate.h */ = {isa = PBXFileReference; path = AppDelegate.h; sourceTree = "<group>"; };
+		CE20B74F15C3E6D900541961 /* StoreTest-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "StoreTest-Prefix.pch"; sourceTree = "<group>"; };
+		CE20B75015C3E6D900541961 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		CE20B75115C3E6D900541961 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		CE20B75315C3E6D900541961 /* ViewController.h */ = {isa = PBXFileReference; path = ViewController.h; sourceTree = "<group>"; };
+		CE20B75315C3E6D900541961 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		CE20B75415C3E6D900541961 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		CE20B75715C3E6D900541961 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController.xib; sourceTree = "<group>"; };
+		CE20B76215C5475E00541961 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		CE20B76415C547A400541961 /* StoreManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoreManager.h; sourceTree = "<group>"; };
+		CE20B76515C547A400541961 /* StoreManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoreManager.m; sourceTree = "<group>"; };
+		CE20B77015C5A3F400541961 /* pids.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = pids.plist; path = ../pids.plist; sourceTree = "<group>"; };
+		CE20B77E15C5C34D00541961 /* StoreKitManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoreKitManager.h; sourceTree = "<group>"; };
+		CE20B77F15C5C34D00541961 /* StoreKitManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoreKitManager.m; sourceTree = "<group>"; };
+		CEA592CE15C66FC7009CD9C0 /* StoreData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoreData.h; sourceTree = "<group>"; };
+		CEA592CF15C66FC7009CD9C0 /* StoreData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoreData.m; sourceTree = "<group>"; };
+		CEA5932015C6BD01009CD9C0 /* FakeManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FakeManager.h; sourceTree = "<group>"; };
+		CEA5932115C6BD01009CD9C0 /* FakeManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FakeManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,6 +54,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE20B76315C5475E00541961 /* StoreKit.framework in Frameworks */,
 				CE20B74215C3E6D900541961 /* UIKit.framework in Frameworks */,
 				CE20B74415C3E6D900541961 /* Foundation.framework in Frameworks */,
 				CE20B74615C3E6D900541961 /* CoreGraphics.framework in Frameworks */,
@@ -67,6 +84,7 @@
 		CE20B74015C3E6D900541961 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CE20B76215C5475E00541961 /* StoreKit.framework */,
 				CE20B74115C3E6D900541961 /* UIKit.framework */,
 				CE20B74315C3E6D900541961 /* Foundation.framework */,
 				CE20B74515C3E6D900541961 /* CoreGraphics.framework */,
@@ -77,6 +95,7 @@
 		CE20B74715C3E6D900541961 /* StoreTest */ = {
 			isa = PBXGroup;
 			children = (
+				CE20B77815C5BFCE00541961 /* InAppPurchases */,
 				CE20B75015C3E6D900541961 /* AppDelegate.h */,
 				CE20B75115C3E6D900541961 /* AppDelegate.m */,
 				CE20B75315C3E6D900541961 /* ViewController.h */,
@@ -96,6 +115,22 @@
 				CE20B74F15C3E6D900541961 /* StoreTest-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		CE20B77815C5BFCE00541961 /* InAppPurchases */ = {
+			isa = PBXGroup;
+			children = (
+				CE20B77015C5A3F400541961 /* pids.plist */,
+				CE20B76415C547A400541961 /* StoreManager.h */,
+				CE20B76515C547A400541961 /* StoreManager.m */,
+				CE20B77E15C5C34D00541961 /* StoreKitManager.h */,
+				CE20B77F15C5C34D00541961 /* StoreKitManager.m */,
+				CEA592CE15C66FC7009CD9C0 /* StoreData.h */,
+				CEA592CF15C66FC7009CD9C0 /* StoreData.m */,
+				CEA5932015C6BD01009CD9C0 /* FakeManager.h */,
+				CEA5932115C6BD01009CD9C0 /* FakeManager.m */,
+			);
+			name = InAppPurchases;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -150,6 +185,7 @@
 			files = (
 				CE20B74C15C3E6D900541961 /* InfoPlist.strings in Resources */,
 				CE20B75815C3E6D900541961 /* ViewController.xib in Resources */,
+				CE20B77115C5A3F400541961 /* pids.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -163,6 +199,10 @@
 				CE20B74E15C3E6D900541961 /* main.m in Sources */,
 				CE20B75215C3E6D900541961 /* AppDelegate.m in Sources */,
 				CE20B75515C3E6D900541961 /* ViewController.m in Sources */,
+				CE20B76615C547A500541961 /* StoreManager.m in Sources */,
+				CE20B78015C5C34E00541961 /* StoreKitManager.m in Sources */,
+				CEA592D015C66FC7009CD9C0 /* StoreData.m in Sources */,
+				CEA5932215C6BD01009CD9C0 /* FakeManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -207,7 +247,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 3.0;
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -224,7 +264,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 3.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -272,6 +312,7 @@
 				CE20B75D15C3E6D900541961 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

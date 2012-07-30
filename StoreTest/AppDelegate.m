@@ -10,6 +10,7 @@
 
 #import "ViewController.h"
 
+
 @implementation AppDelegate
 
 @synthesize window = _window;
@@ -29,6 +30,7 @@
     self.viewController = [[[ViewController alloc] initWithNibName:@"ViewController" bundle:nil] autorelease];
     self.window.rootViewController = self.viewController;
     [self.window makeKeyAndVisible];
+    
     return YES;
 }
 
