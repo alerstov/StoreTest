@@ -18,7 +18,6 @@
 		CE20B76315C5475E00541961 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE20B76215C5475E00541961 /* StoreKit.framework */; };
 		CE20B76615C547A500541961 /* StoreManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CE20B76515C547A400541961 /* StoreManager.m */; };
 		CE20B77115C5A3F400541961 /* pids.plist in Resources */ = {isa = PBXBuildFile; fileRef = CE20B77015C5A3F400541961 /* pids.plist */; };
-		CE20B78015C5C34E00541961 /* StoreKitManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CE20B77F15C5C34D00541961 /* StoreKitManager.m */; };
 		CEA592D015C66FC7009CD9C0 /* StoreData.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA592CF15C66FC7009CD9C0 /* StoreData.m */; };
 		CEA5932215C6BD01009CD9C0 /* FakeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA5932115C6BD01009CD9C0 /* FakeManager.m */; };
 /* End PBXBuildFile section */
@@ -200,7 +199,6 @@
 				CE20B75215C3E6D900541961 /* AppDelegate.m in Sources */,
 				CE20B75515C3E6D900541961 /* ViewController.m in Sources */,
 				CE20B76615C547A500541961 /* StoreManager.m in Sources */,
-				CE20B78015C5C34E00541961 /* StoreKitManager.m in Sources */,
 				CEA592D015C66FC7009CD9C0 /* StoreData.m in Sources */,
 				CEA5932215C6BD01009CD9C0 /* FakeManager.m in Sources */,
 			);

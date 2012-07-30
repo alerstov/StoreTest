@@ -7,10 +7,11 @@
 //
 
 #import "StoreManager.h"
-#import "StoreKitManager.h"
+//#import "StoreKitManager.h"
+#import "FakeManager.h"
 #import "StoreData.h"
 
-@interface StoreManager()<SKPaymentTransactionObserver, SKProductsRequestDelegate>
+@interface StoreManager()<StoreKitManagerDelegate>
 
 @property (nonatomic, retain) StoreKitManager* storeKitManager;
 @property (nonatomic, retain) NSMutableArray* buyPids;
@@ -21,7 +22,6 @@
 @implementation StoreManager
 @synthesize pids = _pids;
 @synthesize buyPids = _buyPids;
-@synthesize products = _products;
 @synthesize delegate = _delegate;
 @synthesize storeKitManager = _storeKitManager;
 
@@ -38,13 +38,19 @@
 {
     if (self = [super init]){
         self.storeKitManager = [[StoreKitManager alloc] init];
-        self.storeKitManager.requestDelegate = self;
-        self.storeKitManager.transactionObserver = self;
+        self.storeKitManager.delegate = self;
         
         // read pids
         self.pids = [[StoreData readFromResource:@"pids"] objectForKey:@"pids"];        
         NSArray* storePids = [[StoreData readFromFile:@"store.plist"] objectForKey:@"pids"];
         self.buyPids = [[NSMutableArray alloc]initWithArray:storePids];
+        
+        for (id pid in self.pids) {
+            NSLog(@"pid %@",pid);
+        }
+        for (id pid in self.buyPids) {
+            NSLog(@"buy pid %@",pid);
+        }
     }
     return self;
 }
@@ -64,7 +70,6 @@
 {
     [self.pids release];
     [self.buyPids release];
-    [self.products release];
     [self.storeKitManager release];
     [super dealloc];
 }
@@ -92,78 +97,33 @@
 }
 
 
-
--(void)productsRequest:(SKProductsRequest *)request didReceiveResponse:(SKProductsResponse *)response
-{
-    NSLog(@"products request complete");
-    
-    self.products = response.products;
-    [self.delegate productsAvailable:self];
-}
-
--(void)recordTransaction:(SKPaymentTransaction*)transaction
+-(void)recordTransaction:(NSString *)pid
 {
     // add transaction pid to buyPids array
-    [self.buyPids addObject:transaction.payment.productIdentifier];
+    if (![self.buyPids containsObject:pid]) [self.buyPids addObject:pid];
 
     // save buyPids array
     NSDictionary* dict = [NSDictionary dictionaryWithObject:self.buyPids forKey:@"pids"];
     [StoreData save:dict ToFile:@"store.plist"];
-    [dict release];
 }
 
 
--(void)paymentQueue:(SKPaymentQueue *)queue updatedTransactions:(NSArray *)transactions
+
+-(void)completeTransaction:(NSString *)pid
 {
-    for(SKPaymentTransaction* t in transactions)
-    {
-        switch (t.transactionState) {
-            case SKPaymentTransactionStatePurchased:
-                [self completeTransaction:t];
-                break;
-                
-            case SKPaymentTransactionStateRestored:
-                [self restoreTransaction:t];
-                break;
-                
-            case SKPaymentTransactionStateFailed:
-                [self failedTransaction:t];
-                break;
-                
-            default:
-                break;
-        }
-    }
+    [self recordTransaction:pid];
+    [self.delegate transactionComplete:self :pid];
 }
 
--(void)completeTransaction: (SKPaymentTransaction*)transaction
+-(void)restoreTransaction:(NSString *)pid
 {
-    NSLog(@"transaction complete: %@", transaction.payment.productIdentifier);
-    
-    [self recordTransaction:transaction];
-    [self.delegate transactionComplete:self :transaction.payment.productIdentifier];
-    
-    [[SKPaymentQueue defaultQueue] finishTransaction:transaction];
+    [self recordTransaction:pid];
+    [self.delegate transactionRestore:self :pid];
 }
 
--(void)restoreTransaction: (SKPaymentTransaction*)transaction
+-(void)failedTransaction:(NSString*)pid :(NSError*)error;
 {
-    NSLog(@"transaction restore: %@", transaction.payment.productIdentifier);
-
-    [self recordTransaction:transaction];
-    [self.delegate transactionRestore:self :transaction.payment.productIdentifier];
-    
-    [[SKPaymentQueue defaultQueue] finishTransaction:transaction];
-}
-
--(void)failedTransaction: (SKPaymentTransaction*)transaction
-{
-    if (transaction.error.code != SKErrorPaymentCancelled){
-        // todo          
-        NSLog(@"transaction failed: %@", transaction.error);
-    }
-    
-    [[SKPaymentQueue defaultQueue] finishTransaction:transaction];
+    // todo
 }
 
 @end

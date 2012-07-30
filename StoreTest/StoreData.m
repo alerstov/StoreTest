@@ -54,5 +54,10 @@
                                         errorDescription:&errorDesc];
 }
 
++(void)deleteDataFile
+{
+    NSError* error;
+    [[NSFileManager defaultManager] removeItemAtPath:[StoreData pathForDataFile:@"store.plist"] error:&error];
+}
 
 @end

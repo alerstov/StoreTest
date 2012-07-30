@@ -8,18 +8,14 @@
 
 #import "FakeManager.h"
 
-@implementation FakeManager
-{
-    SKProductsRequest* productsRequest;
-}
-@synthesize requestDelegate;
-@synthesize transactionObserver;
+@interface StoreKitManager()
 
--(void)dealloc
-{
-    [productsRequest release];
-    [super dealloc];
-}
+@end
+
+
+@implementation StoreKitManager
+@synthesize delegate = _delegate;
+
 
 // should be called at startup
 -(void)initTransactionQueue
@@ -27,10 +23,6 @@
     
 }
 
--(void)requestProducts:(NSSet*)pids
-{
-//    self.requestDelegate productsRequest:<#(SKProductsRequest *)#> didReceiveResponse:<#(SKProductsResponse *)#>
-}
 
 // user can disable the ability to make purchases
 -(BOOL)canMakePayments
@@ -40,16 +32,19 @@
 
 -(void)makePayment: (NSString*)pid
 {
-    //SKPayment* p = [SKPayment paymentWithProduct:product];
-    SKPayment* p = [SKPayment paymentWithProductIdentifier:pid];
-    [[SKPaymentQueue defaultQueue] addPayment:p];
+    [self.delegate completeTransaction:pid];
 }
 
 -(void)restorePurchases
 {
-    SKPaymentTransaction* tr = [[SKPaymentTransaction alloc]init];
-    id tr = [[NSArray alloc] initWithObjects:@"com.1", nil];
-    [self.transactionObserver paymentQueue:nil updatedTransactions:tr];
+    [self.delegate restoreTransaction:@"com.1"];
+}
+
+
+
+-(void)requestProducts:(NSSet*)pids
+{
+      
 }
 
 @end

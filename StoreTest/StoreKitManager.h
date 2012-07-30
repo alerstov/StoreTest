@@ -7,17 +7,25 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "StoreKit/StoreKit.h"
+
+
+@protocol StoreKitManagerDelegate
+
+-(void)completeTransaction:(NSString*)pid;
+-(void)restoreTransaction:(NSString*)pid;
+-(void)failedTransaction:(NSString*)pid :(NSError*)error;
+
+@end
+
 
 @interface StoreKitManager : NSObject
 
-@property (nonatomic, assign) id<SKProductsRequestDelegate> requestDelegate;
-@property (nonatomic, assign) id<SKPaymentTransactionObserver> transactionObserver;
+@property (nonatomic, assign) id<StoreKitManagerDelegate> delegate;
 
 -(void)initTransactionQueue;
--(void)requestProducts:(NSSet*)pids;
 -(BOOL)canMakePayments;
 -(void)makePayment: (NSString*)pid;
 -(void)restorePurchases;
+-(void)requestProducts:(NSSet*)pids;
 
 @end

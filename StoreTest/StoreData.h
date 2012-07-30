@@ -14,4 +14,6 @@
 +(void)save:(NSDictionary*)dict ToFile:(NSString*)file;
 +(NSDictionary*)readFromResource:(NSString*)name;
 
++(void)deleteDataFile;
+
 @end

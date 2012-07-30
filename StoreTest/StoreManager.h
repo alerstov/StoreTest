@@ -8,7 +8,6 @@
 
 
 #import <Foundation/Foundation.h>
-#import "StoreKit/StoreKit.h"
 
 @class StoreManager;
 
@@ -16,9 +15,6 @@
 
 -(void)transactionComplete:(StoreManager*)storeManager :(NSString*)pid;
 -(void)transactionRestore:(StoreManager*)storeManager :(NSString*)pid;
-
-@optional 
--(void)productsAvailable:(StoreManager*)storeManager;
 
 @end
 
@@ -38,6 +34,5 @@
 
 @property (nonatomic, assign) id<StoreManagerDelegate> delegate;
 @property (nonatomic, retain) NSArray* pids;
-@property (nonatomic, retain) NSArray* products;    // array of SKProduct
 
 @end
